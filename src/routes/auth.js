@@ -41,7 +41,7 @@ const verifyToken = (req, res, next) => {
 };
 
 // Register User
-router.post('/Register', async (req, res) => {
+router.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
 
     try {
@@ -94,7 +94,7 @@ router.post('/Register', async (req, res) => {
 });
 
 // Login User
-router.post('/Login', async (req, res) => {
+router.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
     try {
@@ -146,7 +146,7 @@ router.post('/Login', async (req, res) => {
 });
 
 // Logout User
-router.post('/Logout', verifyToken, async (req, res) => {
+router.post('/logout', verifyToken, async (req, res) => {
     try {
         // Simpan token ke dalam blacklist
         const token = req.headers['authorization']?.split(' ')[1];
